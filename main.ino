@@ -5,9 +5,9 @@ obstacles in front of it.
 */
 
 
-int interval = 1000;  // Delay between sensor reads.
+int interval = 500;  // Delay between sensor reads.
 int signalPin = A0;  // Analog pin for signal from sensor.
-int ledPin = 3;  //  This pin turns on the MOSFET that will turn on the LEDS.
+int ledPin = 2;  //  This pin turns on the MOSFET that will turn on the LEDS.
 
 void setup() {
   pinMode(ledPin, OUTPUT);
@@ -22,11 +22,13 @@ void loop() {
   float sensorData = analogRead(signalPin) * (3.3 / 722);
   Serial.println(sensorData);
 
+  // Turn on MOSFET when not obstructed.
   if (sensorData > 1.0) {
     digitalWrite(ledPin, HIGH);
   } else {
     digitalWrite(ledPin, LOW);
   }
+
   delay(interval);
 
 }
