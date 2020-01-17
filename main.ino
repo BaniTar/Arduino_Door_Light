@@ -11,8 +11,6 @@ int ledPin = 2;  //  This pin turns on the MOSFET that will turn on the LEDS.
 
 void setup() {
   pinMode(ledPin, OUTPUT);
-  // Initialize serial communication for testing.
-  Serial.begin(9600);
 }
 
 void loop() {
@@ -20,7 +18,6 @@ void loop() {
   and analogRead ranges from 20 to 722 with low voltage when obstructed
   and high voltage if not obstructed. */
   float sensorData = analogRead(signalPin) * (3.3 / 722);
-  Serial.println(sensorData);
 
   // Turn on MOSFET when not obstructed.
   if (sensorData > 1.0) {
@@ -30,5 +27,4 @@ void loop() {
   }
 
   delay(interval);
-
 }
