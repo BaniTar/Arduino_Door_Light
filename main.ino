@@ -11,10 +11,15 @@ int ledPin = 3;  //  This pin turns on the MOSFET that will turn on the LEDS.
 
 void setup() {
   pinMode(ledPin, OUTPUT);
+  // Initialize serial communication for testing.
+  Serial.begin(9600);
 }
 
 void loop() {
-  sensorData = analogRead(signalPin);
-  delay(timer)
+  // Get sensor data as voltage. The sensor takes 3.3 V power
+  // and ranges from 20 to 722.
+  float sensorData = analogRead(signalPin) * (3.3 / 722);
+
+  delay(interval);
 
 }
