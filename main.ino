@@ -16,10 +16,17 @@ void setup() {
 }
 
 void loop() {
-  // Get sensor data as voltage. The sensor takes 3.3 V power
-  // and ranges from 20 to 722.
+  /* Get sensor data as voltage. The sensor takes 3.3 V power
+  and analogRead ranges from 20 to 722 with low voltage when obstructed
+  and high voltage if not obstructed. */
   float sensorData = analogRead(signalPin) * (3.3 / 722);
+  Serial.println(sensorData);
 
+  if (sensorData > 1.0) {
+    digitalWrite(ledPin, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+  }
   delay(interval);
 
 }
