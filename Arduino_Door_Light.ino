@@ -1,7 +1,7 @@
 /*
 The program reads sensor data from an IR obstacle
 sensor and turns on the lights if it detects no
-obstacles in front of it. It works with
+obstacles in front of it. It works with Arduino interrupts.
 */
 
 #include <avr/sleep.h> // Library for Arduino sleep functions
