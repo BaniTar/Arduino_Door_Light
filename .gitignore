@@ -3,3 +3,22 @@
 ################################################################################
 
 /Arduino_Door_Light.vcxproj.user
+/Arduino_Door_Light.vcxproj.filters
+/Arduino_Door_Light.vcxproj
+/Arduino_Door_Light.sln
+/__vm/.Arduino_Door_Light.vsarduino.h
+/.vs/VSWorkspaceState.json
+/.vs/slnx.sqlite
+/.vs/ProjectSettings.json
+/.vs/Arduino_Door_Light/v16/ipch/AutoPCH/b48969c23da437c2/MAIN.ipch
+/.vs/Arduino_Door_Light/v16/Browse.VC.opendb
+/.vs/Arduino_Door_Light/v16/Browse.VC.db
+/.vs/Arduino_Door_Light/v16/.suo
+/.vs/Arduino_Door_Light/v16/ipch/AutoPCH/b43aeaa44c4e6d33/.ARDUINO_DOOR_LIGHT.VSARDUINO.ipch
+/.vs/Arduino_Door_Light/v16/ipch/AutoPCH/d6fd5e81e2513f83/ARDUINO_DOOR_LIGHT.ipch
+/.vs/tasks.vs.json
+/.vs/__vm/.vsarduino.h
+/__vm/Configuration.Release.vmps.xml
+/__vm/Configuration.Debug.vmps.xml
+/__vm/Compile.vmps.xml
+/CppProperties.json
