@@ -12,14 +12,18 @@ int ledPin = 2;  //  This pin turns on the MOSFET that will turn on the LEDS.
 
 void setup() {
     pinMode(ledPin, OUTPUT);
-    digitalWrite(ledPin, LOW);
     pinMode(signalPin, INPUT_PULLUP);
     // The controller will detect if voltage has gone from LOW to HIGH.
     attachInterrupt(digitalPinToInterrupt(interruptPin), wakeUp, RISING );
 }
 
 void loop() {
-    //stub
+    // Shuts down LEDs and puts the CPU to sleep by until interrupt occurs.
+    digitalWrite(ledPin, LOW);
+    sleep_enable();
+    set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+    delay(500);
+    sleep_cpu();
 }
 
 void wakeUp() {
