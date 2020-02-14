@@ -22,16 +22,19 @@ void loop() {
     digitalWrite(ledPin, LOW);
     sleep_enable();
     set_sleep_mode(SLEEP_MODE_PWR_DOWN);
-    delay(500);
     sleep_cpu();
+
+    // Execution will continue when wakeUp() occurs and turn on
+    // the LED strip while the sensor sees no obstruction.
+    while ( digitalRead(signalPin) == HIGH) {
+        digitalWrite(ledPin, HIGH);
+        // Wait for a second until checking again to if no obstruction.
+        delay(1000);
+    }
 }
 
 void wakeUp() {
-    // Wake up CPU and activate LED strip if the door is still open.
+    // Wake up CPU and activate continue main loop.
     sleep_disable();
-    while ( signalPin == HIGH) {
-        digitalWrite(ledPin, HIGH);
-        // Wait for a second until checking again to if door is closed.
-        delay(1000);
-    }
+
 }
